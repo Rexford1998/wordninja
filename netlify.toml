@@ -1,2 +1,2 @@
 [template.environment]
-VITE_ANTHROPIC_API_KEY = "API_KEY"
+VITE_ANTHROPIC_API_KEY = API_KEY
