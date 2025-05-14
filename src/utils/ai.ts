@@ -61,7 +61,8 @@ export const genAIResponse = createServerFn({ method: 'GET', response: 'raw' })
   .handler(async ({ data }) => {
     // Check for API key in environment variables
     const apiKey = process.env.ANTHROPIC_API_KEY || import.meta.env.VITE_ANTHROPIC_API_KEY
-
+console.log("Anthropic key length:", apiKey?.length);
+    
     if (!apiKey) {
       throw new Error(
         'Missing API key: Please set VITE_ANTHROPIC_API_KEY in your environment variables or VITE_ANTHROPIC_API_KEY in your .env file.'
