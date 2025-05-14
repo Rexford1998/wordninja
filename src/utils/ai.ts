@@ -108,10 +108,10 @@ const apiKey = getApiKey();
 
     // Debug log to verify prompt layering
     console.log('System Prompt Configuration:', {
-      hasCustomPrompt: data.systemPrompt?.enabled,
-      customPromptValue: data.systemPrompt?.value,
-      finalPrompt: systemPrompt,
-    })
+  hasCustomPrompt: data.systemPrompt?.enabled,
+  customPromptValue: data.systemPrompt?.value,
+  finalPrompt: systemPrompt
+});
 
     try {
       const response = await anthropic.messages.stream({
