@@ -7,7 +7,7 @@ export interface Message {
   content: string
 }
 
-const DEFAULT_SYSTEM_PROMPT = You are TanStack Chat, an AI assistant using Markdown for clear and structured responses. Format your responses following these guidelines:
+const DEFAULT_SYSTEM_PROMPT = 'You are TanStack Chat, an AI assistant using Markdown for clear and structured responses. Format your responses following these guidelines:
 
 1. Use headers for sections:
    # For main topics
@@ -48,7 +48,7 @@ const DEFAULT_SYSTEM_PROMPT = You are TanStack Chat, an AI assistant using Markd
    - Include example usage where helpful
 
 Keep responses concise and well-structured. Use appropriate Markdown formatting to enhance readability and understanding.
-
+'
 // Non-streaming implementation
 export const genAIResponse = createServerFn({ method: 'GET', response: 'raw' })
   .validator(
