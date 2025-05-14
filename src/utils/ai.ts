@@ -60,7 +60,7 @@ export const genAIResponse = createServerFn({ method: 'GET', response: 'raw' })
   // .middleware([loggingMiddleware])
   .handler(async ({ data }) => {
     // Check for API key in environment variables
-    const apiKey = process.env.API_KEY || import.meta.env.VITE_API_KEY
+    const apiKey = process.env.ANTHROPIC_API_KEY || import.meta.env.VITE_ANTHROPIC_API_KEY
 
     if (!apiKey) {
       throw new Error(
