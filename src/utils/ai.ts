@@ -59,8 +59,11 @@ export const genAIResponse = createServerFn({ method: 'GET', response: 'raw' })
   )
   // .middleware([loggingMiddleware])
   .handler(async ({ data }) => {
-    // Check for API key in environment variables
-    const apiKey = process.env.ANTHROPIC_API_KEY || import.meta.env.VITE_ANTHROPIC_API_KEY
+const getApiKey = () => {
+  return process?.env?.ANTHROPIC_API_KEY ?? import.meta.env?.VITE_ANTHROPIC_API_KEY;
+};
+
+const apiKey = getApiKey();
     if (!apiKey) {
       throw new Error(
         'Missing API key: Please set VITE_ANTHROPIC_API_KEY in your environment variables or VITE_ANTHROPIC_API_KEY in your .env file.'
