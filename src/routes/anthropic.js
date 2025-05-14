@@ -2,7 +2,7 @@ exports.handler = async function(event, context) {
   const apiKey = process.env.API_KEY;
   const requestBody = JSON.parse(event.body);
 
-  const response = await fetch('https://wordninja2.netlify.app/*', {
+  const response = await fetch('https://wordninja2.netlify.app/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
